@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nicollas Andrey - Portfólio</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #000000, #8B0000);
+      color: white;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ffffff; /* Nome em branco */
+      margin-bottom: 10px;
+      animation: brilho-piscando 3s ease-in-out infinite;
+    }
+
+    @keyframes brilho-piscando {
+      0%, 100% {
+        text-shadow:
+          0 0 10px #fff,
+          0 0 20px #fff,
+          0 0 30px #ff0000,
+          0 0 40px #ff0000,
+          0 0 50px #ff0000,
+          0 0 60px #ff0000,
+          0 0 70px #ff0000;
+        opacity: 1;
+      }
+      50% {
+        text-shadow: none;
+        opacity: 0.5;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .social {
+      margin: 20px 0;
+    }
+
+    .social a {
+      color: #ff6347; /* cor tomate */
+      margin-right: 15px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social a:hover {
+      color: #fff;
+    }
+
+    section.projects {
+      margin-top: 40px;
+    }
+
+    /* Animação "Projetos" */
+    section.projects > h2 {
+      color: white;
+      margin-bottom: 20px;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .project {
+      background-color: #1a1a1a;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 4px solid #ff6347; /* tomate */
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 99, 71, 0.3);
+    }
+
+    .project h3 {
+      color: #ff6347; /* tomate */
+      margin-bottom: 10px;
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #ff6347;
+      color: #000;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .project a:hover {
+      background-color: #e5533d;
+      transform: scale(1.05);
+    }
+
+    .codigo {
+      display: none;
+      background-color: #1e1e1e;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-family: Consolas, 'Courier New', monospace;
+      white-space: pre-wrap;
+      color: #d4d4d4;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+
+    /* Cores estilo VSCode para o código */
+    .codigo span.keyword { color: #569CD6; }
+    .codigo span.string { color: #CE9178; }
+    .codigo span.function { color: #DCDCAA; }
+    .codigo span.comment { color: #6A9955; }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    footer p a {
+      color: #fff !important;
+      text-decoration: none;
+    }
+
+  </style>
+  <script>
+    function toggleCodigo(id) {
+      const bloco = document.getElementById(id);
+      bloco.style.display = bloco.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Nicollas Andrey</h1>
+    <p>Estudante do Centro Universitário Unipiaget | 4º semestre de ADS | 19 anos</p>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/nicollas-andrey-761691303/" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <section class="projects">
+    <h2>Projetos</h2>
+
+    <div class="project">
+      <img src="https://i.imgur.com/B0LCyxr.png" alt="Imagem projeto 1" />
+      <h3>Conversor de Temperatura</h3>
+      <p>Converte valores entre Celsius, Fahrenheit e Kelvin.</p>
+      <a href="javascript:void(0);" onclick="toggleCodigo('codigo1')">Ver Código</a>
+      <div class="codigo" id="codigo1">
+<span class="keyword">def</span> celsius_para_fahrenheit(c):
+    <span class="keyword">return</span> (c * 9/5) + 32
+
+<span class="keyword">def</span> fahrenheit_para_celsius(f):
+    <span class="keyword">return</span> (f - 32) * 5/9
+
+<span class="keyword">def</span> celsius_para_kelvin(c):
+    <span class="keyword">return</span> c + 273.15
+
+<span class="keyword">def</span> kelvin_para_celsius(k):
+    <span class="keyword">return</span> k - 273.15
+
+<span class="keyword">def</span> main():
+    <span class="function">print</span>(<span class="string">"Conversor de Temperatura"</span>)
+    temp = <span class="function">float</span>(<span class="function">input</span>(<span class="string">"Digite a temperatura: "</span>))
+    escala = <span class="function">input</span>(<span class="string">"Digite a escala original (C, F, K): "</span>).<span class="function">upper</span>()
+    alvo = <span class="function">input</span>(<span class="string">"Para qual escala deseja converter? (C, F, K): "</span>).<span class="function">upper</span>()
+
+    <span class="keyword">if</span> escala == <span class="string">"C"</span>:
+        <span class="keyword">if</span> alvo == <span class="string">"F"</span>:
+            <span class="function">print</span>(f<span class="string">"{temp}°C = {celsius_para_fahrenheit(temp):.2f}°F"</span>)
+        <span class="keyword">elif</span> alvo == <span class="string">"K"</span>:
+            <span class="function">print</span>(f<span class="string">"{temp}°C = {celsius_para_kelvin(temp):.2f}K"</span>)
+        <span class="keyword">else</span>:
+            <span class="function">print</span>(<span class="string">"Temperatura na mesma escala:"</span>, temp)
+    <span class="keyword">elif</span> escala == <span class="string">"F"</span>:
+        <span class="keyword">if</span> alvo == <span class="string">"C"</span>:
+            <span class="function">print</span>(f<span class="string">"{temp}°F = {fahrenheit_para_celsius(temp):.2f}°C"</span>)
+        <span class="keyword">else</span>:
+            <span class="function">print</span>(<span class="string">"Conversão não implementada"</span>)
+    <span class="keyword">elif</span> escala == <span class="string">"K"</span>:
+        <span class="keyword">if</span> alvo == <span class="string">"C"</span>:
+            <span class="function">print</span>(f<span class="string">"{temp}K = {kelvin_para_celsius(temp):.2f}°C"</span>)
+        <span class="keyword">else</span>:
+            <span class="function">print</span>(<span class="string">"Conversão não implementada"</span>)
+    <span class="keyword">else</span>:
+        <span class="function">print</span>(<span class="string">"Escala inválida"</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    main()
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://i.imgur.com/ZMGpZHo.png" alt="Imagem projeto 2" />
+      <h3>Lista de Tarefas</h3>
+      <p>Permite adicionar, listar e remover tarefas, com persistência em arquivo.</p>
+      <a href="javascript:void(0);" onclick="toggleCodigo('codigo2')">Ver Código</a>
+      <div class="codigo" id="codigo2">
+<span class="keyword">tarefas</span> = []
+
+<span class="keyword">def</span> listar():
+    <span class="keyword">for</span> i, tarefa <span class="keyword">in</span> <span class="keyword">enumerate</span>(tarefas):
+        <span class="function">print</span>(f<span class="string">"{i + 1}. {tarefa}"</span>)
+
+<span class="keyword">def</span> adicionar(tarefa):
+    tarefas.<span class="function">append</span>(tarefa)
+    <span class="function">print</span>(<span class="string">"Tarefa adicionada!"</span>)
+
+<span class="keyword">def</span> remover(indice):
+    <span class="keyword">try</span>:
+        tarefas.<span class="function">pop</span>(indice - 1)
+        <span class="function">print</span>(<span class="string">"Tarefa removida!"</span>)
+    <span class="keyword">except</span>:
+        <span class="function">print</span>(<span class="string">"Índice inválido"</span>)
+
+<span class="keyword">def</span> main():
+    <span class="keyword">while</span> <span class="keyword">True</span>:
+        <span class="function">print</span>(<span class="string">"1. Listar\n2. Adicionar\n3. Remover\n4. Sair"</span>)
+        opcao = <span class="function">input</span>(<span class="string">"Escolha: "</span>)
+
+        <span class="keyword">if</span> opcao == <span class="string">'1'</span>: listar()
+        <span class="keyword">elif</span> opcao == <span class="string">'2'</span>: adicionar(<span class="function">input</span>(<span class="string">"Nova tarefa: "</span>))
+        <span class="keyword">elif</span> opcao == <span class="string">'3'</span>: remover(<span class="keyword">int</span>(<span class="function">input</span>(<span class="string">"N° da tarefa: "</span>)))
+        <span class="keyword">elif</span> opcao == <span class="string">'4'</span>: <span class="keyword">break</span>
+        <span class="keyword">else</span>: <span class="function">print</span>(<span class="string">"Opção inválida"</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    main()
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://i.imgur.com/5aQl7OV.png" alt="Imagem projeto 3" />
+      <h3>Gerador de Senhas</h3>
+      <p>Gera senhas seguras com letras, números e símbolos.</p>
+      <a href="javascript:void(0);" onclick="toggleCodigo('codigo3')">Ver Código</a>
+      <div class="codigo" id="codigo3">
+<span class="keyword">import</span> random
+<span class="keyword">import</span> string
+
+<span class="keyword">def</span> gerar_senha(tamanho=12):
+    caracteres = string.ascii_letters + string.digits + string.punctuation
+    senha = <span class="function">''.join</span>(random.<span class="function">choice</span>(caracteres) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="keyword">range</span>(tamanho))
+    <span class="keyword">return</span> senha
+
+<span class="function">print</span>(<span class="string">"Senha gerada:"</span>, gerar_senha())
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://i.imgur.com/yZ8KGOH.png" alt="Imagem projeto 4" />
+      <h3>Jogo da Forca</h3>
+      <p>Clássico jogo da forca com palavras aleatórias e tentativas limitadas.</p>
+      <a href="javascript:void(0);" onclick="toggleCodigo('codigo4')">Ver Código</a>
+      <div class="codigo" id="codigo4">
+<span class="keyword">import</span> random
+palavras = [<span class="string">'python'</span>, <span class="string">'programar'</span>, <span class="string">'openai'</span>, <span class="string">'desenvolvimento'</span>]
+
+palavra = random.<span class="function">choice</span>(palavras)
+letras_descobertas = [<span class="string">'_'</span> <span class="keyword">for</span> _ <span class="keyword">in</span> palavra]
+tentativas = 6
+
+<span class="keyword">while</span> tentativas > 0 <span class="keyword">and</span> <span class="string">'_'</span> <span class="keyword">in</span> letras_descobertas:
+    <span class="function">print</span>(' '.<span class="function">join</span>(letras_descobertas))
+    letra = <span class="function">input</span>(<span class="string">"Digite uma letra: "</span>)
+
+    <span class="keyword">if</span> letra <span class="keyword">in</span> palavra:
+        <span class="keyword">for</span> i, l <span class="keyword">in</span> <span class="keyword">enumerate</span>(palavra):
+            <span class="keyword">if</span> l == letra:
+                letras_descobertas[i] = letra
+    <span class="keyword">else</span>:
+        tentativas -= 1
+        <span class="function">print</span>(f<span class="string">"Letra errada! Tentativas restantes: {tentativas}"</span>)
+
+<span class="keyword">if</span> <span class="string">'_'</span> <span class="keyword">not in</span> letras_descobertas:
+    <span class="function">print</span>(<span class="string">"Parabéns, você venceu!"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(f<span class="string">"Você perdeu! A palavra era {palavra}"</span>)
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://i.imgur.com/cgl8b8a.png" alt="Imagem projeto 5" />
+      <h3>Conversor de Moedas</h3>
+      <p>Converte valores usando cotações reais obtidas via API.</p>
+      <a href="javascript:void(0);" onclick="toggleCodigo('codigo5')">Ver Código</a>
+      <div class="codigo" id="codigo5">
+<span class="keyword">import</span> requests
+
+<span class="keyword">def</span> converter(valor, de, para):
+    url = f<span class="string">"https://api.exchangerate-api.com/v4/latest/{de.upper()}"</span>
+    resposta = requests.<span class="function">get</span>(url)
+    dados = resposta.<span class="function">json</span>()
+    taxa = dados[<span class="string">'rates'</span>][para.<span class="function">upper</span>()]
+    <span class="keyword">return</span> valor * taxa
+
+<span class="function">print</span>(<span class="string">"Exemplo: R$100 em USD:"</span>, converter(100, <span class="string">'BRL'</span>, <span class="string">'USD'</span>))
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contato: <a>nadlp.contato@gmail.com
